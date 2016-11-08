@@ -1,0 +1,374 @@
+*{
+  vertical-align: baseline;
+  font-family: arial ;
+  font-style: inherit;
+  font-size: inherit;
+  border: 0px none;
+  /*outline: 1px dotted red; 0;*/
+  padding: 0px;
+  margin: 0px; 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  font-family: monospace;
+  color: white;
+  cursor:crosshair;
+}
+
+body{
+  background-color: black;
+}
+
+input[type="text"] {
+  color: black;
+}
+
+#gameRegion{
+  width: 1000px;
+  height: 600px;
+  background-image: url("../img/dungeon_floor3.png");
+  position:relative;
+  border: solid #111111 5px;
+  /*background-size: 20%;*/
+  cursor: crosshair;
+}
+
+#pause {
+  width: 1000px;
+  height: 600px;
+  background-image: url("../img/dungeon_floor3.png");
+  position: relative;
+  border: solid #111111 5px;
+  cursor: crosshair;
+  display: none;
+}
+
+#gameover {
+  width: 1000px;
+  height: 600px;
+  background-image: url("../img/dungeon_floor3.png");
+  position: relative;
+  border: solid #111111 5px;
+  cursor: crosshair;
+  display: none;
+}
+
+#game_id {
+  display: none;
+}
+
+.load{
+  margin: 20px 0px;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+
+}
+
+#pause h1{
+  margin-top: 225px;
+  text-align: center;
+  color: white;
+}
+
+.button, #savebtn {
+  border-radius: 10px;
+}
+
+#savebtn {
+  margin: 10px 0px 0px 300px;
+  position: absolute;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}   
+
+
+#restart {
+  margin: 10px 0px 0px 435px;
+  position: absolute;
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} 
+
+#home {
+  margin: 10px 0px 0px 260px;
+  position: absolute;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#home2 {
+  margin: 10px 0px 0px 10px;
+  position: absolute;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#quit {
+  margin: 10px 0px 0px 550px;
+  position: absolute;
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} 
+
+#logout {
+  margin-top: 20px;
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  width: 125px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} 
+#createGame {
+  color: white;
+  /*background-image: url("../img/dungeon_floor3.png");*/
+}
+
+#createGame ul, li{
+  height: 25px;
+  display: inline-block;
+}
+
+#createGame fieldset, form-group{
+ display: inline-block; 
+}
+
+#createGame button{
+  height: 25px;
+  padding: 0px 8px;
+}
+
+#player{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+
+#loadGame{
+  background-color: black;
+  /*background-image: url("../img/dungeon_floor3.png");*/
+}
+
+
+#characterImage{
+  /*padding: 20px 0px 0px 0px;*/
+}
+
+#leaderboard td, th{
+  width: 100px;
+}
+
+#demo{
+  color: white;
+}
+
+#democlick{
+  color: white;
+}
+#rock{
+      width: 5px;
+      height: 5px;
+      background-color: brown;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+#readyScreen{
+      color: #999999;
+      font-weight: bold;
+      font-size: 75px;
+      margin: 200px 0px 0px 350px;
+      position:fixed;
+      z-index:99;
+      
+    }
+#bonusScreen{
+      color: #DDDDDD;
+      font-weight: bold;
+      font-size: 75px;
+      margin: 50px 0px 0px 125px;
+      position:fixed;
+      z-index:99;
+    }
+
+#arrow{
+      width: 25px;
+      height: 10px; 
+      position: absolute;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      background-position: top left;
+      background-image: url("../img/arrow.png");
+      }
+#arrow2{
+      width: 25px;
+      height: 10px; 
+      position: absolute;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      background-position: top left;
+      background-image: url("../img/arrow2.png");
+}
+#lightning_bolt{
+      width: 25px;
+      height: 10px; 
+      position: absolute;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      background-position: top left;
+      background-image: url("../img/lightning_bolt.png");
+}
+
+#bolt{
+      width: 25px;
+      height: 10px; 
+      position: absolute;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      background-position: top left;
+      background-image: url("../img/arrow.png");
+}
+
+.wall{
+  background-color: black;
+  background-repeat: repeat;
+  background-size: contain;
+  background-image: url("../img/dungeon_wall2.png");
+  position: absolute;
+  /*border: solid black 2px;*/
+}
+
+.soldiers{
+    /*background-image: url("../img/sword_idle.png");*/
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: absolute;
+  }
+.mages{
+  background-repeat: no-repeat;
+  background-size:contain;
+  position: absolute;
+}
+.archers{
+  background-repeat: no-repeat;
+  background-size:contain;
+  position: absolute;
+}
+.boss{
+  background-repeat: no-repeat;
+  background-size:contain;
+  position: absolute;
+}
+.deadSoldiers{
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/sword_dead.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+
+.deadMages{
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/mage_dead.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+.deadArchers{
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/archer_red_dead.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+.game{
+  position:absolute;
+  top: 5px;
+  left: 5px;
+  height: 600px;
+  width: 1230px;
+}
+#ui{
+  color: #999999;
+}
+#ui .row{
+  padding: 10px;
+  vertical-align: top;
+}
+  #health{
+    height: 30px;
+    width: 200px;
+    position: relative;
+    display: block;
+    outline: 2px solid #999999;
+  }
+    #healthBar{
+      background-color: black;
+      position:absolute;
+    }
+  #charge{
+    height: 30px;
+    width: 200px;
+    background: linear-gradient(to right, yellow, white, lightblue);
+    position: relative;
+    display: block;
+    outline: 2px solid #999999;
+  }
+  #chargeBar{
+      background-color: black;
+      position:absolute;
+    }

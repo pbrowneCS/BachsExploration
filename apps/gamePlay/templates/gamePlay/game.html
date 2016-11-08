@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bachsExploration | Play </title>
+	<meta charset="utf-8">
+	{%load staticfiles%}
+	<!-- Bootstrap -->
+	 
+	<link rel="stylesheet" type="text/css" href="{% static 'gamePlay/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Other Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="{% static 'gamePlay/css/style.css' %}">
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="{%static 'gamePlay/js/jquery-3.0.0.min.js'%}"></script>
+
+	<!-- main JS -->
+	<script type="text/javascript" src="{%static 'gamePlay/js/script.js'%}"></script>
+	<script type="text/javascript"></script>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+	
+	<!-- Container / Main Body -->
+	<div class="container">
+		<!-- row 1 / Message & Alert Display -->
+		<div class="row game">
+				<div id="gameRegion" class="col-xs-9">
+					<div id="readyScreen"></div>
+					<div id="bonusScreen"></div>
+					<div id="deadSoldiers"></div>
+					<div id="deadMages"></div>
+					<div id="deadArchers"></div>
+					<div id="player"><img id="playerImg" src="{% static 'gamePlay/img/archer_idle.png' %}"></div>
+					<div id="projectiles"></div>
+					<div id="mageProjectiles"></div>
+					<div id="archerProjectiles"></div>
+					<div id="walls"></div>
+					<div id="soldiers"></div>
+					<div id="mages"></div>
+					<div id="archers"></div>
+					<div id="boss"></div>
+					
+				</div>
+				<div id="pause" class="col-xs-9">
+					<h1>GAME PAUSED</h1>
+					<!-- <button id="savebtn">SAVE GAME</button> --><a class="button" id="home" href="{%url 'game_main'%}">HOME</a><a href="{% url 'logOut' %}" class="button" id="quit">QUIT</a>
+				</div>
+				<div id="game_id" data-value="{{game_id}}">
+
+				</div>
+				<!-- <div>
+					<p id="demo">test</p>
+				</div>
+				<div>
+					<p id="democlick">test</p>
+				</div> -->
+				<div id="scoreBoard" class="col-xs-2">
+					<div id="ui" style="width:200px;">
+						<div class="row">
+							<a class="button" id="home2" href="{%url 'game_main'%}">HOME</a>
+						</div>
+						<div class="row"></div>
+						<div class="row"></div>
+						<div class="row">
+							<div id="score">
+								<div></div>
+							</div>
+						</div>
+						<div class="row">
+							<h3>Health</h3>
+							<div id="health">
+								<div id="currentHealth"></div>
+							</div>
+						</div>
+						<div class="row">
+							<h3>Charge</h3>
+							<div id="charge">
+
+								<div id="currentCharge"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>

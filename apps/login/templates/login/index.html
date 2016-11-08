@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bachsExploration | Welcome! </title>
+	{%load staticfiles%}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}">
+	<script type="text/javascript" src="{% static 'login/js/jquery-3.0.0.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'login/js/script.js' %}"></script>
+</head>
+<body>
+	<div class="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header"></div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="{% url 'login_index' %}">Home</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- Bootstrap container -->
+	<div class="container">
+	<!-- This is the only row in the login screen -->
+		<div class="row loginScreen">
+			<div class="col-xs-3"></div>
+			<div id="loginBox" class="col-xs-6">
+				{% if messages%}
+				<ul class="messages">
+					{%for message in messages%}
+					<li>{{message}}</li>
+					{%endfor%}
+				{%endif%}
+				<!-- Login form -->
+				<form action="{%url 'login'%}" method="POST" id="loginForm" class="loginRegisterForm">
+				{%csrf_token%}
+					<ul>
+						<li>
+							<fieldset class="form-group">
+								<label>Username</label>
+								<input type="text" name="username">
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="form-group">
+								<label>Password</label>
+								<input type="password" name="password">
+							</fieldset>
+						</li>
+					</ul>
+					<div class="centered"> 
+						<fieldset class="form-group">
+							<button class="btn btn-primary" type="/submit">Log In</button>
+						</fieldset>
+					</div>
+				</form>
+				<!-- Register form (hidden when initially loaded) -->
+				<form action="{%url 'register'%}" method="POST" id="registerForm" class="loginRegisterForm">
+				{%csrf_token%}
+					<ul>
+						<li>
+							<fieldset class="form-group">
+								<label>Name</label>
+								<input type="text" name="name">
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="form-group">
+								<label>Username</label>
+								<input type="text" name="username">
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="form-group">
+								<label>Password</label>
+								<input type="password" name="password">
+							</fieldset>
+						</li>
+						<li>
+							<fieldset class="form-group">
+								<label>Confirm Password</label>
+								<input type="password" name="passrepeat">
+							</fieldset>
+						</li>
+					</ul>
+					<div class="centered">
+						<p style="color:red;">Don't use real personal information here.</p>
+					</div>
+					<div class="centered">
+						<fieldset class="form-group">
+							<button class="btn btn-primary" type="submit">Register</button>
+						</fieldset>
+					</div>
+				</form>
+				<!-- Buttons toggle login/registration -->
+				<div class="centered">
+					<button class="loginRegisterSwitch btn btn-default" id="loginSwitch">Already have an account? Login</button>
+					<button class="loginRegisterSwitch btn btn-default" id="registerSwitch">Don't have an account? Register now</button>
+				</div>
+			</div>
+			<div class="col-xs-3"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>&copy; 2016 BachsExploration, a division of SRSbznz Inc.</p>
+	</div>
+</body>
+</html>

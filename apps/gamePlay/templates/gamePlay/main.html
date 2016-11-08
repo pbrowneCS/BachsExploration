@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bachsExploration | Dashboard </title>
+	<meta charset="utf-8">
+	{%load staticfiles%}
+	<!-- Bootstrap -->
+	 
+	<link rel="stylesheet" type="text/css" href="{% static 'gamePlay/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<!-- Other Style Sheets -->
+	<link rel="stylesheet" type="text/css" href="{% static 'gamePlay/css/style.css' %}">
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="{%static 'gamePlay/js/jquery-3.0.0.min.js'%}"></script>
+
+	<!-- main JS -->
+	<script type="text/javascript" src="{%static 'gamePlay/js/script_main.js'%}"></script>
+
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+
+	<!-- Container / Main Body -->
+	<div class="container" id="main">
+		<!-- row 1 / Message & Alert Display -->
+		<div class="row">
+			<div class="col-xs-9">
+				<h1>bachs exploration</h1>
+			</div>
+			<div class="col-xs-3">
+				<a class="button" id="logout" href="{%url 'logOut'%}">LOGOUT</a>
+			</div>
+		</div>
+		
+		
+		
+		<div class="row">
+			<div class="col-xs-9" id="createGame">
+				<h3>Start A New Quest!</h3>
+				<form action="{%url 'game_new' %}" method="POST">
+				{%csrf_token%}
+					<fieldset class="form-group">
+						<button class="btn btn-primary" type="/submit">Play!</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class="col-xs-3">
+				<h4 style="text-align: center;">You are an archer:</h4>
+				<img id="playerImg" style="display:block; margin:auto;" src="{% static 'gamePlay/img/archer_idle.png' %}">
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-xs-9" id="loadGame">
+				<h3>Select A Game:</h3>
+
+				{% for game in games %}
+					{% for save in game.save_set.all %}
+					<a href="{% url 'game_play' id=save.game_id %}" class="button load">
+					{{save.save_name}}<br/>
+					{{save.updated_at}}</a>
+
+					{% endfor %}
+				{% endfor %}
+			</div>			
+		</div> -->
+				
+		<div class="row">
+			<div class="col-xs-9">
+				<h3>Leader Board</h3>
+				<table class="table" id="leaderboard">
+					<thead>
+						<th>Rank</th>
+						<th>Username</th>
+						<th>High Score</th>
+					</thead>
+					{% for leader in leaders %}
+					
+					<tbody>
+						<tr>
+							<td>{{forloop.counter}}</td>
+							<td>{{leader.user}}</td>
+							<td>{{leader.score}}</td>
+						</tr>
+					</tbody>
+					
+					{% endfor %}
+				</table>				
+			</div>
+			<div class="col-xs-3">
+				<h5 style="text-align: center;">Fire arrows</h5>
+				<h5 style="text-align: center;">to smite your adversaries!</h5>
+				<h3>Controls:</h3>
+				<tbody>
+					<tr>
+						<td><p><b>- W:</b> UP</p></td>
+						<td><p><b>- A:</b> LEFT</p></td>
+						<td><p><b>- S:</b> DOWN</p></td>
+						<td><p><b>- D:</b> RIGHT</p></td>
+						<td><p><b>- SPACE:</b> PAUSE / UNPAUSE</p></td>
+						<td><p><b>- Mouse Click:</b> Fire Arrow!</p></td>
+					</tr>
+				</tbody>
+				<h3>Ancient Wisdom:</h3>
+				<p>- Hold down Mouse click to charge arrows for extra damage!</p>
+				<p>- Extra health and faster time give bonus points!</p>
+			</div>
+		</div>
+</body>
+</html>
